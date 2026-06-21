@@ -1,5 +1,12 @@
 Flask
+Flask-Bootstrap
+Flask-Login
+Flask-SQLAlchemy
+Flask-WTF
+WTForms
+email-validator
 gunicorn
 numpy
 pandas
 scikit-learn
+Werkzeug

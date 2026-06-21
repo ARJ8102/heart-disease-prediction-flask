@@ -159,18 +159,21 @@ def predictheart():
     # reshape the numpy array as we are predicting for only on instance
     input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)    
     
-    filename = 'RFmodel88_test02.sav'
-    loaded_RFmodel = pickle.load(open(filename, 'rb'))
+    model_path = os.path.join(basedir, 'RFmodel88_test02.sav')
+    loaded_RFmodel = pickle.load(open(model_path, 'rb'))
     
     prediction = loaded_RFmodel.predict(input_data_reshaped)
-    
-    if prediction == 1:
-        res_val = "A high risk of Heart Disease "
-    else: 
-        res_val = "A Low risk of Heart Disease "
+
+    if prediction[0] == 1:
+        res_val = "A high risk of Heart Disease"
+    else:
+        res_val = "A low risk of Heart Disease"
     return render_template('heart_result.html', prediction_text='Patient has {}'.format(res_val))
 
 ############################################################################################################
+
+with app.app_context():
+    db.create_all()
 
 if __name__ == "__main__":
     app.run(debug=True)
