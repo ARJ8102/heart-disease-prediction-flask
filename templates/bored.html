@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<body>
+    <form name="quiz">
+
+        <select id="product1">
+        <option  value="1">Male</option>
+        <option  value="2">Female</option>
+        
+        </select>
+
+        <select id="product2">
+        <option value="1">Typical Angina</option>
+        <option value="2">Atypical Angina</option>  
+        <option value="3">Non-Anginal Pain</option>  
+        <option value="4">Asymptomatic</option>
+            
+        </select>
+
+        <input type="submit" value="Check Answer" onClick="RadioCheck(); ">
+
+        <script>
+            function RadioCheck(){
+                var number1 = document.quiz.product1.value;
+                var number2 = document.quiz.product2.value;
+                alert(number1+' '+number2)
+            }
+        </script>
+    </form> 
+</body>
+
+
+
+</html>

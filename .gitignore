@@ -1,0 +1,25 @@
+# virtual environment
+hdp/
+venv/
+.env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Flask/local files
+instance/
+.env
+*.log
+
+# VS Code
+.vscode/
+
+# zip files / random local folders
+*.zip
+New folder.zip
+
+# database
+database.db
